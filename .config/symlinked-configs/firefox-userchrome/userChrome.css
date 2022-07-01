@@ -1,0 +1,4 @@
+/* Hide native tabs */
+#TabsToolbar {
+	visibility: collapse;
+}
