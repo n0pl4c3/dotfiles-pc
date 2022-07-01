@@ -19,3 +19,7 @@ feh --bg-scale $HOME/Pictures/wallp.png
 /bin/bash $HOME/.config/scripts/jack.sh
 
 picom &
+
+# Spotifyd
+killall -q spotifyd
+spotifyd
