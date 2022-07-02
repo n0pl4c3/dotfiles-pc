@@ -11,6 +11,12 @@ plugins=(
 # EnvVars for VPS etc.
 source $HOME/.config/variables/addresses
 
+# TiddlyWiki Server Sync
+source $HOME/.config/scripts/wiki.sh
+
+# Aliases for easy dotfile management
+source $HOME/.config/scripts/dotfiles.sh
+
 source $ZSH/oh-my-zsh.sh
 
 # TODO Emacs
@@ -21,15 +27,4 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-alias dotman='/usr/bin/git --git-dir=$HOME/Repositories/dotfiles-pc --work-tree=$HOME'
 
-wiki () {
-  mkdir -pv "$HOME"/Downloads/wiki
-  case $1 in
-    (pull) rsync -u -r -h --progress "$VPS1":"$VPS_WIKI_DIR" "$HOME"/Downloads/wiki/ ;;
-    (push) rsync -u -r -h --progress "$HOME"/Downloads/wiki/index.html "$VPS1":"$VPS_WIKI_DIR" ;;
-    (open) xdg-open file://"$HOME"/Downloads/wiki/index.html ;;
-    (*) echo "Unknown command $1"
-            return 1 ;;
-    esac
-}
