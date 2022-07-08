@@ -135,3 +135,16 @@ super + ctrl + s
 #
 super + shift + {q,d}
 	setxkbmap -layout {us, dvorak} -variant altgr-intl
+
+
+#
+# Application Chords
+#
+super + x ; f
+        firefox
+
+super + x ; d
+        discord
+
+super + x ; t
+        thunderbird
