@@ -19,12 +19,5 @@ source $HOME/.config/scripts/dotfiles.sh
 
 source $ZSH/oh-my-zsh.sh
 
-# TODO Emacs
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-
+# To prevent issues with ssh and missing terminfo
+alias ssh="TERM=xterm-256color ssh"
