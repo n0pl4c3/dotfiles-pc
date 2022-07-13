@@ -2,21 +2,32 @@
 ; Also lots of copied code
 ; But it will slowly come to shape
 
-(defpoll music_current :interval "1s" "~/.config/eww/scripts/spotify_controls.sh format")
-
-(defpoll time :interval "1s"
-              :initial "initial-value"
-              `date +%H:%M`)
-
-(defpoll volume :initial "0" :interval "1s" "scripts/volume.sh get")
+(include "eww_variables.yuck")
 
 (defwidget emibar_top []
-  (centerbox :orientation "h"
-       (volume)
-       (spotify)
-       (time)))
+  (box :orientation "h"
+    (workspaces)))
+
+(defwidget workspaces []
+  (literal :content workspaces))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; Unused proof of concept widgets/copied stuff
 (defwidget spotify []
   (box :class "spotify"
        :orientation "h"

@@ -1,10 +1,13 @@
+$bg: #c4bcd8;
+$border: #958abe;
+
 * {
   all: unset;
 }
 
 .emibar {
-  background-color: #c4bcd8;
-  border: 5px solid #958abe;
+  background-color: $bg;
+  border: 5px solid $border;
   border-radius: 8px;
 }
 
@@ -37,4 +40,31 @@
   min-width: 50px;
   margin-left: 10px;
   margin-right: 20px;
+}
+
+.workspaces {
+  font-family: "Hack Nerd Font";
+  font-size: 17px;
+  margin-right: 8px;
+  button {
+    margin: 0px 5px;
+  }
+
+  .occupied {
+    color: #ffffff;
+  }
+
+  .focused {
+    color: #ffffff;
+  }
+
+  .urgent {
+    color: #eeeeee;
+  }
+  
+   .empty {
+    // padding-top: 2px;
+    color: #ffffff;
+    // font-size: 10px;
+  }
 }
