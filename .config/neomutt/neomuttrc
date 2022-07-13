@@ -1,0 +1,28 @@
+source "~/.config/neomutt/auth"
+source "~/.config/neomutt/mutt-colors"
+
+set from = "mail@n0pl4c3.net"
+set realname = "n0pl4c3"
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+mailboxes =INBOX =Sent =Trash =Drafts =Junk 
+
+# Sidebar
+set sidebar_visible
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_width = 25
+set sidebar_divider_char = ' | '
+set sidebar_indent_string = '  
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible

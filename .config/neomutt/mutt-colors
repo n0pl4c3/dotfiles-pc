@@ -1,0 +1,4 @@
+# More changes later, for now looks decent with terminal colorscheme
+color normal    default      default
+color indicator brightyellow      black
+color status        brightdefault       red
