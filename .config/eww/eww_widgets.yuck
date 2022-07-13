@@ -1,0 +1,50 @@
+; Absolute Patchwork, currently just a glorified debugger for my scripts
+; Also lots of copied code
+; But it will slowly come to shape
+
+(defpoll music_current :interval "1s" "~/.config/eww/scripts/spotify_controls.sh format")
+
+(defpoll time :interval "1s"
+              :initial "initial-value"
+              `date +%H:%M`)
+
+(defpoll volume :initial "0" :interval "1s" "scripts/volume.sh get")
+
+(defwidget emibar_top []
+  (centerbox :orientation "h"
+       (volume)
+       (spotify)
+       (time)))
+
+
+(defwidget spotify []
+  (box :class "spotify"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music_current != "" ? "🎵${music_current}" : ""}))
+
+(defwidget time []
+  (box :class "time"
+       :orientation "h"
+       :space-evenly true
+       :halign "end"
+    "${time}"))
+
+(defwidget volume []
+  (box :class "volume" :orientation "h" :space-evenly "true"
+    (metric :label "A:"
+            :value volume
+            :onchange "scripts/volume.sh set {}")))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly true
+    (box :class "label" label)
+    (scale :min 0
+           :max 120
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))

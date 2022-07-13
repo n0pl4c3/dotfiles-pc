@@ -1,0 +1,15 @@
+(include "eww_widgets.yuck")
+
+(defwindow emibar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "7px"
+                      :width "99%"
+                      :height "33px"
+                      :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "33px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+  (emibar_top))
+
