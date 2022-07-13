@@ -8,6 +8,9 @@ plugins=(
   colored-man-pages
 )
 
+# Default Editor
+export EDITOR="/usr/bin/nvim"
+
 # EnvVars for VPS etc.
 source $HOME/.config/variables/addresses
 
@@ -21,3 +24,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To prevent issues with ssh and missing terminfo
 alias ssh="TERM=xterm-256color ssh"
+
+# To not forget starting spotifyd
+source $HOME/.config/scripts/spt.sh
