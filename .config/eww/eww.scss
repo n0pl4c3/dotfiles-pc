@@ -1,5 +1,8 @@
 $bg: #c4bcd8;
 $border: #958abe;
+$focused: #7065a1;
+$nonfocused: #fffeff;
+$urgent: #8d59ae;
 
 * {
   all: unset;
@@ -46,25 +49,24 @@ $border: #958abe;
   font-family: "Hack Nerd Font";
   font-size: 17px;
   margin-right: 8px;
+
   button {
     margin: 0px 5px;
   }
 
   .occupied {
-    color: #ffffff;
+    color: $nonfocused;
   }
 
   .focused {
-    color: #ffffff;
+    color: $focused;
   }
 
   .urgent {
-    color: #eeeeee;
+    color: $urgent;
   }
   
    .empty {
-    // padding-top: 2px;
-    color: #ffffff;
-    // font-size: 10px;
+    color: $nonfocused;
   }
 }
