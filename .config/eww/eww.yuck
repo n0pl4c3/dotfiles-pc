@@ -5,10 +5,10 @@
   :geometry (geometry :x "0%"
                       :y "7px"
                       :width "99%"
-                      :height "35px"
+                      :height "37px"
                       :anchor "top center")
   :stacking "fg"
-  :reserve (struts :distance "33px" :side "top")
+  :reserve (struts :distance "35px" :side "top")
   :windowtype "dock"
   :wm-ignore false
   (emibar_top))

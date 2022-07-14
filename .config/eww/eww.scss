@@ -3,15 +3,38 @@ $border: #958abe;
 $focused: #7065a1;
 $nonfocused: #fffeff;
 $urgent: #8d59ae;
+$song_color: #fffeff;
+$spotify: #8d95cc;
+
+//$empty: #e0d8e6;
 
 * {
   all: unset;
 }
 
 .emibar {
+  font-size: 16px;
   background-color: $bg;
   border: 5px solid $border;
   border-radius: 8px;
+}
+
+.spotify {
+  color: $song_color;
+  font-family: "Hack Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+
+  .song_label {
+    font-size: 22px;
+    color: $border;
+  }
+
+  .spotify_controls {
+    font-size: 20px;
+    margin-right: 13px;
+    margin-left: 10px;
+  }
 }
 
 .metric scale trough highlight {

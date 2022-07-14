@@ -1,6 +1,10 @@
 (defpoll music_current 
   :interval "1s" 
   "~/.config/eww/scripts/spotify_controls.sh format")
+
+(defpoll music_title 
+  :interval "1s" 
+  "~/.config/eww/scripts/spotify_controls.sh song")
  
 (defpoll time :interval "1s"
     :initial "initial-value"
@@ -11,3 +15,5 @@
   "scripts/volume.sh get")
 
 (deflisten workspaces "scripts/workspaces.sh")
+
+(defvar show_controls false)

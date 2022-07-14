@@ -33,16 +33,16 @@ get_playback_status() {
 
 
 next_song() {
-  spt pb -n > /dev/null 2>&1
+  spt pb -n > /dev/null 2>&1 &
 }
 
 
 previous_song() {
-  spt pb -pp > /dev/null 2>&1
+  spt pb -pp > /dev/null 2>&1 &
 }
 
 pause_song() {
-  spt pb -t > /dev/null 2>&1
+  spt pb -t > /dev/null 2>&1 &
 }
 
 if [ "$1" == "song" ];then

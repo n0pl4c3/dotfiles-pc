@@ -122,7 +122,7 @@ super + {Left,Down,Up,Right}
 
 
 #
-# Screemshot Utilities
+# Screenshot Utilities
 #
 super + alt + s
 	scrot -e 'mv $f ~/Pictures/Screenshots/'

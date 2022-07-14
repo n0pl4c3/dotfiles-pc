@@ -6,12 +6,34 @@
 
 (defwidget emibar_top []
   (box :orientation "h"
-    (workspaces)))
+    (spotify_display)))
 
 (defwidget workspaces []
   (literal :content workspaces))
 
-
+(defwidget spotify_display []
+  (eventbox :onhover "eww update show_controls=true" :onhoverlost "eww update show_controls=false"
+    (box :class "spotify"
+        :orientation "h"
+        :space-evenly false
+        :halign "center"
+      (revealer :reveal {!show_controls && music_title != ""}
+      (label :text " " :class "song_label"))
+      (revealer :transition "slideleft"
+                :reveal show_controls
+                :duration "350ms"
+        (box :class "spotify_controls"
+             :orientation "h"
+             :space-evenly true
+             (button :class "next-button" :onclick "scripts/spotify_controls.sh previous" "") ))
+      {music_title != "" ? "${music_title}" : ""}
+      (revealer :transition "slideright"
+		:reveal show_controls
+		:duration "350ms"
+        (box :class "spotify_controls"
+             :orientation "h"
+             :space-evenly true
+             (button :class "next-button" :onclick "scripts/spotify_controls.sh next" ""))))))
 
 
 
@@ -28,12 +50,6 @@
 
 
 ; Unused proof of concept widgets/copied stuff
-(defwidget spotify []
-  (box :class "spotify"
-       :orientation "h"
-       :space-evenly false
-       :halign "center"
-    {music_current != "" ? "🎵${music_current}" : ""}))
 
 (defwidget time []
   (box :class "time"
