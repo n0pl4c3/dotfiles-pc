@@ -25,12 +25,12 @@ get_playback_status() {
 }
 
 next_song() {
-  spt pb -n > /dev/null 2>&1 &
+  playerctl next > /dev/null 2>&1 &
 }
 
 
 previous_song() {
-  spt pb -pp > /dev/null 2>&1 &
+  playerctl previous > /dev/null 2>&1 &
 }
 
 pause_song() {
