@@ -13,6 +13,17 @@ $preselect: #a0aed7;
   all: unset;
 }
 
+.left {
+  margin-left: 10px;
+}
+
+.right {
+  font-family: "Hack Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px; 
+}
+
 .emibar {
   font-size: 16px;
   background-color: $bg;
@@ -93,5 +104,30 @@ $preselect: #a0aed7;
 
   .title_dropdown {
     font-size: 24px;
+  }
+
+  .spotify_dropdown_controls {
+    font-size: 30px;
+
+    .pause {
+      margin-left: 20px;
+      margin-right:20px;
+    }
+
+    // Either I'm stupid, or this doesn't allow multiple selectors at once
+    .prev:hover {
+        color: $preselect;
+        transition: color 0.25s;
+    }
+
+    .pause:hover {
+        color: $preselect;
+        transition: color 0.25s;
+    }
+
+    .next:hover {
+        color: $preselect;
+        transition: color 0.25s;
+    }
   }
 }

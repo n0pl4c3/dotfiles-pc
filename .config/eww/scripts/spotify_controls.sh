@@ -5,32 +5,24 @@
 # for me to get used to typing in dvorak.
 
 get_song() {
-  song=`spt pb -f %t 2>&1 | sed '/^Error:/d'`
+  song=`playerctl metadata title 2>&1 | sed '/^No player.*/d'`
   echo "$song"
 }
 
 get_artist() {
-  artist=`spt pb -f %a 2>&1 | sed '/^Error:/d'`
+  artist=`playerctl metadata artist 2>&1 | sed '/^No player.*/d'`
   echo "$artist"
 }
 
 get_info() {
-  song_info=`spt pb -f "%t - %a" 2>&1 | sed '/^Error:/d'`
+  song_info=`playerctl metadata -f  '{{ title }} - {{ artist }}' 2>&1 | sed '/^No player.*/d'`
   echo "$song_info"
 }
 
 get_playback_status() {
-  song_info=`spt pb -f "%s" 2>&1 | sed '/^Error:/d'`
-
-  if [ "$song_info" == "▶" ];then
-    echo "Playing"
-  elif [ "$song_info" == "" ];then
-    echo ""
-  else
-    echo "Paused"
-  fi
+  song_info=`playerctl status 2>&1 | sed '/^No player.*/d'`
+  echo "$song_info"
 }
-
 
 next_song() {
   spt pb -n > /dev/null 2>&1 &
@@ -43,6 +35,11 @@ previous_song() {
 
 pause_song() {
   spt pb -t > /dev/null 2>&1 &
+}
+
+album_art() {
+  art=`playerctl --player=spotifyd metadata mpris:artUrl 2>&1 | sed '/^No player.*/d'`
+  echo "$art"
 }
 
 if [ "$1" == "song" ];then
@@ -59,6 +56,8 @@ elif [ "$1" == "previous" ];then
   previous_song
 elif [ "$1" == "toggle" ];then
   pause_song
+elif [ "$1" == "cover" ];then
+  album_art
 else
   echo "[ERROR] No/Invalid Paramters specified"
 fi

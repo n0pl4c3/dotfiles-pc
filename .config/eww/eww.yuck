@@ -17,7 +17,7 @@
   :monitor 0
   :stacking "fg"
   :focusable "false"
-  :geometry (geometry :x "0" 
+  :geometry (geometry :x "3px" 
                       :y "5%"
                       :width "13%"
                       :height "13%"

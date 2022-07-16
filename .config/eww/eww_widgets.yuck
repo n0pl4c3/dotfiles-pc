@@ -5,8 +5,10 @@
 (include "eww_variables.yuck")
 
 (defwidget emibar_top []
-  (box :orientation "h" :halign "center"
-    (spotify_display)))
+  (box :orientation "h" 
+    (box :class "left" :orientation "h" :halign "start" :space-evenly false (workspaces))
+    (box :class "middle" :orientation "h" :halign "center" :space-evenly false (spotify_display))
+    (box :class "right" :orientation "h" :halign "end" :space-evenly false (time))))
 
 (defwidget workspaces []
   (literal :content workspaces))
@@ -43,8 +45,19 @@
        :vexpand "false"
        :hexpand "false"
        :spacing 15
-       (label :valign "center" :class "title_dropdown" :wrap "true" :text music_title)
-       (label :valign "center" :class "artist_dropdown" :wrap "true" :text music_artist)))
+       (label :halign "center" :valign "center" :class "title_dropdown" :wrap "true" :text music_title)
+       (label :halign "center" :valign "center" :class "artist_dropdown" :wrap "true" :text music_artist)
+       (box :class "spotify_dropdown_controls"
+            :space-evenly false
+            :orientation "h"
+            :halign "center"
+            :vexpand "false"
+            :hexpand "false"
+            (button :class "prev" :onclick "scripts/spotify_controls.sh previous" "")
+            (button :class "pause" :onclick "scripts/spotify_controls.sh toggle"
+              {spotify_status == "Playing" ? "" : "契"})
+            (button :class "next" :onclick "scripts/spotify_controls.sh next" "")
+         )))
 
 
 
