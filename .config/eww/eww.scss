@@ -38,6 +38,7 @@ $preselect: #a0aed7;
 
     .next-button:hover {
       color: $border;
+      transition: color 0.5s;
     }
   }
 }
@@ -77,5 +78,20 @@ $preselect: #a0aed7;
       color: $preselect;
       transition: color 0.25s;
     }
+  }
+}
+
+.spotify_dropdown {
+  font-size: 16px;
+  background-color: $bg;
+  border: 5px solid $border;
+  border-radius: 8px;
+  font-family: "Hack Nerd Font";
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .title_dropdown {
+    font-size: 24px;
   }
 }

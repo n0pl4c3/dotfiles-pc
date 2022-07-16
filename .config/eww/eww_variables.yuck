@@ -6,6 +6,10 @@
   :interval "1s" 
   "~/.config/eww/scripts/spotify_controls.sh song")
  
+(defpoll music_artist
+  :interval "1s" 
+  "~/.config/eww/scripts/spotify_controls.sh artist")
+
 (defpoll time :interval "1s"
     :initial "initial-value"
     `date +%H:%M`)
@@ -17,3 +21,6 @@
 (deflisten workspaces "scripts/workspaces.sh")
 
 (defvar show_controls false)
+
+; State Keeping
+(defvar music_visible false)

@@ -5,7 +5,7 @@
 (include "eww_variables.yuck")
 
 (defwidget emibar_top []
-  (box :orientation "h"
+  (box :orientation "h" :halign "center"
     (spotify_display)))
 
 (defwidget workspaces []
@@ -26,7 +26,7 @@
              :orientation "h"
              :space-evenly true
              (button :class "next-button" :onclick "scripts/spotify_controls.sh previous" "") ))
-      {music_title != "" ? "${music_title}" : ""}
+      (button :onclick "scripts/dropdown.sh spotify" {music_title != "" ? "${music_title}" : ""})
       (revealer :transition "slideright"
 		:reveal show_controls
 		:duration "350ms"
@@ -35,7 +35,16 @@
              :space-evenly true
              (button :class "next-button" :onclick "scripts/spotify_controls.sh next" ""))))))
 
-
+(defwidget spotify_dropdown []
+  (box :class "spotify_dropdown"
+       :orientation "v"
+       :space-evenly false
+       ;:halign "center"
+       :vexpand "false"
+       :hexpand "false"
+       :spacing 15
+       (label :valign "center" :class "title_dropdown" :wrap "true" :text music_title)
+       (label :valign "center" :class "artist_dropdown" :wrap "true" :text music_artist)))
 
 
 

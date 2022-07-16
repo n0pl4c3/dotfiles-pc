@@ -13,3 +13,14 @@
   :wm-ignore false
   (emibar_top))
 
+(defwindow emibar_spotify
+  :monitor 0
+  :stacking "fg"
+  :focusable "false"
+  :geometry (geometry :x "0" 
+                      :y "5%"
+                      :width "13%"
+                      :height "13%"
+                      :anchor "top center")
+  (spotify_dropdown))
+
