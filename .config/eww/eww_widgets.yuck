@@ -59,7 +59,15 @@
             (button :class "next" :onclick "scripts/spotify_controls.sh next" "")
          )))
 
-
+(defwidget time []
+  (eventbox :class "timeevent" :onhover "eww update show_date=true" :onhoverlost "eww update show_date=false"
+    (box :class "time"
+         :orientation "h"
+         :space-evenly false
+         :halign "end"
+         :spacing 20
+      "${time}"
+      (revealer :transition "slideleft" :reveal show_date :duration "350ms"  date))))
 
 
 
@@ -73,12 +81,6 @@
 
 ; Unused proof of concept widgets/copied stuff
 
-(defwidget time []
-  (box :class "time"
-       :orientation "h"
-       :space-evenly true
-       :halign "end"
-    "${time}"))
 
 (defwidget volume []
   (box :class "volume" :orientation "h" :space-evenly "true"

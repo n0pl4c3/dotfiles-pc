@@ -45,7 +45,7 @@ fi
 xsetroot -cursor_name left_ptr
 
 if [ -n "$failsafe" ]; then
- exec bspwm
+ exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) bspwm
 else
  exec $command
 fi

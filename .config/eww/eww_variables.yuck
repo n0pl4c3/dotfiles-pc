@@ -18,6 +18,10 @@
     :initial "initial-value"
     `date +%H:%M`)
 
+(defpoll date :interval "1s"
+    :initial "initial-value"
+    `date +%d/%m/%Y`)
+
 (defpoll volume :initial "0"
                 :interval "1s" 
   "scripts/volume.sh get")
@@ -28,3 +32,5 @@
 
 ; State Keeping
 (defvar music_visible false)
+
+(defvar show_date false)
