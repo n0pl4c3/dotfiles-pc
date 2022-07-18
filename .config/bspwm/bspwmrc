@@ -26,6 +26,7 @@ feh --bg-scale $HOME/Pictures/wallp.png
 picom &
 
 killall -q keepassxc
-keepassxc
+keepassxc &
+playerctld daemon &
+eww open emibar &
 
-playerctld daemon

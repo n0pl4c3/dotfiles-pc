@@ -34,7 +34,7 @@ previous_song() {
 }
 
 pause_song() {
-  spt pb -t > /dev/null 2>&1 &
+  playerctl play-pause > /dev/null 2>&1 &
 }
 
 album_art() {
