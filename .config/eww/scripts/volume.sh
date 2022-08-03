@@ -5,7 +5,9 @@ get_volume() {
 }
 
 set_volume() {
-  pulsemixer --set-volume $1
+  volume=`echo "$1" | awk -F. '{print $1}'`
+  echo $volume
+  pulsemixer --set-volume $volume
 }
 
 if [ "$1" == "get" ];then

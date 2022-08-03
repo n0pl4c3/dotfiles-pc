@@ -29,6 +29,8 @@
 (deflisten workspaces "scripts/workspaces.sh")
 
 (defvar show_controls false)
+(defvar show_volume false)
+(defpoll mute :initial "0" :interval "1s" `pulsemixer --get-mute`)
 
 ; State Keeping
 (defvar music_visible false)

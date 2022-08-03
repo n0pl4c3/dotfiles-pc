@@ -35,6 +35,37 @@ $preselect: #a0aed7;
   border-radius: 8px;
 }
 
+.volume {
+  .label {
+    font-size: 32px;
+    color: $border;
+  }
+
+  .label:hover {
+    color: $song_color;
+  }
+
+  .volume_slider trough {
+    all: unset;
+    min-width: 150px;
+    min-height: 8px;
+    border-radius: 8px;
+    background-color: $bg;
+    margin-left: 7px;
+    margin-right: 10px;
+    margin-top: 2px;
+    color: #000000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $border;
+  }
+
+  .volume_slider trough highlight {
+    background-color: $preselect;
+    border-radius: 8px;
+  }
+}
+
 .spotify {
   color: $song_color;
   font-family: "Hack Nerd Font";

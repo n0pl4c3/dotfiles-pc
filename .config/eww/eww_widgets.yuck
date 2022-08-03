@@ -6,7 +6,7 @@
 
 (defwidget emibar_top []
   (box :orientation "h" 
-    (box :class "left" :orientation "h" :halign "start" :space-evenly false (workspaces))
+    (box :class "left" :orientation "h" :halign "start" :space-evenly false :spacing 20 (workspaces) (volume))
     (box :class "middle" :orientation "h" :halign "center" :space-evenly false (spotify_display))
     (box :class "right" :orientation "h" :halign "end" :space-evenly false (time))))
 
@@ -69,33 +69,18 @@
       "${time}"
       (revealer :transition "slideleft" :reveal show_date :duration "350ms"  date))))
 
-
-
-
-
-
-
-
-
-
-
-; Unused proof of concept widgets/copied stuff
-
-
 (defwidget volume []
-  (box :class "volume" :orientation "h" :space-evenly "true"
-    (metric :label "A:"
-            :value volume
-            :onchange "scripts/volume.sh set {}")))
+   (box :class "volume"
+        :orientation "h"
+        :space-evenly false
+        (button :class "mute" :onclick "pulsemixer --toggle-mute"  (label :text {mute == "1" ? "婢" : "墳"} :class "label"))
+        (scale :class "volume_slider" 	  
+ 	       :value volume
+       	       :orientation "h"      
+ 	       :flipped false
+               :timeout "500ms"
+	       :tooltip "Volume: ${volume}%" 
+	       :max 125 
+	       :min 0 
+	       :onchange "scripts/volume.sh set {}")))
 
-
-(defwidget metric [label value onchange]
-  (box :orientation "h"
-       :class "metric"
-       :space-evenly true
-    (box :class "label" label)
-    (scale :min 0
-           :max 120
-           :active {onchange != ""}
-           :value value
-           :onchange onchange)))

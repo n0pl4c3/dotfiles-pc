@@ -158,3 +158,9 @@ super + m ; p
 
 super + m ; t
         ~/.config/eww/scripts/spotify_controls.sh toggle
+
+#
+# Show Hide bar
+#
+super + e ; {s, q}
+        eww {open, close} emibar
