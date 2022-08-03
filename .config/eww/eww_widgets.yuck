@@ -28,7 +28,8 @@
              :orientation "h"
              :space-evenly true
              (button :class "next-button" :onclick "scripts/spotify_controls.sh previous" "") ))
-      (button :onclick "scripts/dropdown.sh spotify" {music_title != "" ? "${music_title}" : ""})
+      (button :onclick "scripts/dropdown.sh spotify" 
+        (label :limit-width 40 :text {music_title != "" ? "${music_title}" : ""}))
       (revealer :transition "slideright"
 		:reveal show_controls
 		:duration "350ms"
