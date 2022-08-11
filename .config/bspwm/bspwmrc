@@ -30,3 +30,6 @@ keepassxc &
 playerctld daemon &
 eww open emibar &
 
+emacsclient -e "(kill-emacs)"
+emacs --daemon
+

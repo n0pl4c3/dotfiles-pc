@@ -160,6 +160,23 @@ super + m ; t
         ~/.config/eww/scripts/spotify_controls.sh toggle
 
 #
+# Emacs <3
+#
+super + e ; c
+        emacsclient -c -n -u
+
+super + e ; e
+        emacs
+
+super + e ; d
+        emacs --daemon
+
+super + e ; k
+        emacsclient -e "(kill-emacs)"
+
+
+
+#
 # Show Hide bar
 #
 super + e ; {s, q}
