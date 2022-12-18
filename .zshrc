@@ -1,4 +1,6 @@
 export ZSH="$HOME/.config/.oh-my-zsh"
+export GOPATH="$(go env GOPATH)"
+export PATH="${PATH}:${GOPATH}/bin"
 
 ZSH_THEME="robbyrussell"
 
