@@ -35,6 +35,13 @@ $preselect: #a0aed7;
   border-radius: 8px;
 }
 
+.emibar_external {
+  font-size: 16px;
+  background-color: $bg;
+  border: 5px solid $border;
+  border-radius: 8px;
+}
+
 .volume {
   .label {
     font-size: 32px;

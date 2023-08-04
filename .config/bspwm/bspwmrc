@@ -2,8 +2,6 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d 1 2 3 4 5 6 7 8 
-
 bspc config border_width         8
 
 bspc config active_border_color \#958abe
@@ -28,8 +26,20 @@ picom &
 killall -q keepassxc
 keepassxc &
 playerctld daemon &
-eww open emibar &
 
 emacsclient -e "(kill-emacs)"
 emacs --daemon
+
+left_monitor=$(xrandr --query | grep 'HDMI-A-0')
+if [[ $left_monitor = *connected* ]]; then
+    xrandr --output DisplayPort-1 --primary --auto --rotate normal --output HDMI-A-0 --auto --rotate normal --left-of DisplayPort-1
+    bspc monitor DisplayPort-1 -d 1 2 3 4 5 
+    bspc monitor HDMI-A-0 -d 6 7 8 9 10
+    bspc wm -O DisplayPort-1 HDMI-A-0
+    eww open emibar_external &
+else
+    bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8
+fi
+
+eww open emibar &
 
