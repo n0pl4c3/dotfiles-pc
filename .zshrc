@@ -1,6 +1,7 @@
 export ZSH="$HOME/.config/.oh-my-zsh"
 export GOPATH="$(go env GOPATH)"
 export PATH="${PATH}:${GOPATH}/bin"
+export PATH=/home/n0pl4c3/.nimble/bin:$PATH
 
 ZSH_THEME="robbyrussell"
 

@@ -17,8 +17,6 @@ bspc config gapless_monocle      true
 bspc rule -a KeePassXC state=floating desktop=^5
 bspc rule -a Emacs state=tiled
 
-feh --bg-scale $HOME/Pictures/wallp.png
-
 /bin/bash $HOME/.config/scripts/jack.sh
 
 picom &
@@ -37,8 +35,10 @@ if [[ $left_monitor = *connected* ]]; then
     bspc monitor HDMI-A-0 -d 6 7 8 9 10
     bspc wm -O DisplayPort-1 HDMI-A-0
     eww open emibar_external &
+    feh --bg-fill $HOME/Pictures/wallp.png $HOME/Pictures/wallp2.png
 else
     bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8
+    feh --bg-fill $HOME/Pictures/wallp.png
 fi
 
 eww open emibar &
