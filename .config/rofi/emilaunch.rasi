@@ -20,7 +20,7 @@
 window {
     border: 0.4em solid;
     border-color: @border-colour;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     cursor:                      "default";
     transparency:                "real";
     location:                    center;

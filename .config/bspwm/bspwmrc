@@ -1,5 +1,7 @@
 #! /bin/sh
 
+bspc config focus_follows_pointer true
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc config border_width         8
