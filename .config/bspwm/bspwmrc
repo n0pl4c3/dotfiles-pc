@@ -16,8 +16,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a KeePassXC state=floating desktop=^5
+bspc rule -a KeePassXC state=floating
 bspc rule -a Emacs state=tiled
+bspc rule -a Zathura state=tiled
 
 /bin/bash $HOME/.config/scripts/jack.sh
 
